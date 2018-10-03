@@ -1,5 +1,5 @@
 # docker-parityeth
-Docker Image for Parity for use with ETH and/or ETC
+Docker Image for Parity for use with ETH
 
 ### Quick Start
 Create a parityeth-data volume to persist the parityeth blockchain data, should exit immediately. The parityeth-data container will store the blockchain when the node container is recreated (software upgrade, reboot, etc):
