@@ -10,10 +10,8 @@ RUN groupadd -g ${GROUP_ID} eth \
   && set -x \
   && apt-get update -y \
   && apt-get install -y curl gosu sudo \
+  && /bin/bash -c "bash <(curl https://get.parity.io -L) -r stable" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN /bin/bash -c "bash <(curl https://get.parity.io -L) -r stable" \
-  && mv /usr/bin/parity /usr/local/bin/parity
 
 ADD ./bin /usr/local/bin
 RUN chmod +x /usr/local/bin/eth_oneshot
