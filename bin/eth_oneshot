@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -ex
+
+# Generate config.toml
+echo "Installation Complete!"
+
+if [ $# -gt 0 ]; then
+    args=("$@")
+fi
+
+exec parity "${args[@]}"
