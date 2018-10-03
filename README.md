@@ -29,5 +29,5 @@ docker logs -f parityeth-node
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://git.io/fxIu6)"
+sudo bash -c "$(curl -L https://git.io/fxIg3)"
 ```
