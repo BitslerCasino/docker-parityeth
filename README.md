@@ -31,3 +31,9 @@ Auto Installation
 ```
 sudo bash -c "$(curl -L https://git.io/fxIg3)"
 ```
+
+Auto Updater
+```
+sudo bash -c "$(curl -L https://git.io/fhCB8)"
+```
+Then run `sudo eth-update` for latest version or `sudo eth-update 2.2.6-beta` for the beta version
