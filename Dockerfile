@@ -10,7 +10,7 @@ RUN groupadd -g ${GROUP_ID} eth \
   && set -x \
   && apt-get update -y \
   && apt-get install -y curl gosu sudo \
-  && /bin/bash -c "bash <(curl https://get.parity.io -L) -r stable" \
+  && /bin/bash -c "bash <(curl https://get.parity.io -L)" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD ./bin /usr/local/bin
