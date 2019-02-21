@@ -1,4 +1,5 @@
-FROM ubuntu:xenial
+FROM bitsler/wallet-base:latest
+
 ARG version=stable
 ENV WALLET_VERSION=$version
 ENV HOME /eth
