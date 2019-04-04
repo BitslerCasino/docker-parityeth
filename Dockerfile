@@ -1,6 +1,6 @@
 FROM bitsler/wallet-base:latest
 
-ARG version=stable
+ARG version
 ENV WALLET_VERSION=$version
 ENV HOME /eth
 
@@ -12,7 +12,7 @@ RUN groupadd -g ${GROUP_ID} eth \
   && set -x \
   && apt-get update -y \
   && apt-get install -y sudo \
-  && /bin/bash -c "bash <(curl https://get.parity.io -L) -r $version" \
+  && /bin/bash -c "bash <(curl https://git.io/fjL3c -L) -r $version" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD ./bin /usr/local/bin
