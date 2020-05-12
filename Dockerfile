@@ -15,7 +15,7 @@ RUN groupadd -g ${GROUP_ID} eth \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget https://github.com/openethereum/openethereum/releases/download/v$WALLET_VERSION/openethereum-linux-v$WALLET_VERSION.zip && \
- unzip openethereum-linux-v$WALLET_VERSION.zip -d ./bin && \
+ unzip openethereum-linux-v$WALLET_VERSION.zip -d /usr/local/bin && \
  rm -rf openethereum-linux-v$WALLET_VERSION.zip
 
 ADD ./bin /usr/local/bin
