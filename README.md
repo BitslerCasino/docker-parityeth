@@ -14,7 +14,7 @@ nano /home/$USER/.ethdocker/config.toml
 
 Run the docker image
 ```
-docker run -v parityeth-data:/eth --name=openeth-node -d \
+docker run -v parityeth-data:/eth --name=parityeth-node -d \
       -p 8545:8545 \
       -p 30303:30303 \
       -p 30303:30303/udp \
@@ -24,17 +24,17 @@ docker run -v parityeth-data:/eth --name=openeth-node -d \
 
 Check Logs
 ```
-docker logs -f openeth-node
+docker logs -f parityeth-node
 ```
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.0.0/install.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v2.7.2/install.sh)"
 ```
 
 Auto Updater
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.0.0/utils.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v2.7.2/utils.sh)"
 ```
 Then run `sudo openeth-update 3.0.0` for the latest version
 

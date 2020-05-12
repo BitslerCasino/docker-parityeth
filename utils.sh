@@ -25,16 +25,16 @@ fi
 
 VERSION="${1:-latest}"
 
-echo "Stopping openeth-node if it exists"
-docker stop openeth-node || true
+echo "Stopping parityeth-node if it exists"
+docker stop parityeth-node || true
 echo "Waiting openeth gracefull shutdown..."
-docker wait openeth-node || true
+docker wait parityeth-node || true
 echo "Updating openeth to $VERSION version..."
 docker pull bitsler/docker-openeth:$VERSION
 echo "Removing old openeth installation"
-docker rm openeth-node || true
-echo "Running new openeth-node container"
-docker run -v parityeth-data:/eth --name=openeth-node -d \
+docker rm parityeth-node || true
+echo "Running new parityeth-node container"
+docker run -v parityeth-data:/eth --name=parityeth-node -d \
       -p 8545:8545 \
       -p 30303:30303 \
       -p 30303:30303/udp \
@@ -62,8 +62,8 @@ fi
 echo "WARNING! This will delete ALL openeth-docker installation and files"
 echo "Make sure your wallet.dat is safely backed up, there is no way to recover it!"
 function uninstall() {
-  sudo docker stop openeth-node
-  sudo docker rm openeth-node
+  sudo docker stop parityeth-node
+  sudo docker rm parityeth-node
   sudo rm -rf ~/docker/volumes/parityeth-data ~/.ethdocker /usr/bin/openeth-cli
   sudo docker volume rm parityeth-data
   echo "Successfully removed"

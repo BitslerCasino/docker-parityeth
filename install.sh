@@ -69,7 +69,7 @@ EOL
 echo Installing OpenEthereum Container
 
 docker volume create --name=parityeth-data
-docker run -v parityeth-data:/eth --name=openeth-node -d \
+docker run -v parityeth-data:/eth --name=parityeth-node -d \
       -p 8545:8545 \
       -p 30303:30303 \
       -p 30303:30303/udp \
@@ -83,6 +83,6 @@ echo "==========================="
 echo "Installation Complete"
 echo "RUN the utils.sh file to install openeth-cli utilities"
 echo "Your configuration file is at $HOME/.ethdocker/config.toml"
-echo "If you wish to change it, make sure to restart openeth-node"
-echo "IMPORTANT: To start openeth-node manually simply start the container by docker start openeth-node"
-echo "IMPORTANT: To stop openeth-node simply stop the container by docker stop openeth-node"
+echo "If you wish to change it, make sure to restart parityeth-node"
+echo "IMPORTANT: To start parityeth-node manually simply start the container by docker start parityeth-node"
+echo "IMPORTANT: To stop parityeth-node simply stop the container by docker stop parityeth-node"
