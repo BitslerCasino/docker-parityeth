@@ -32,6 +32,8 @@ jobs:
       id: go
 
     - name: Push image
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           go get github.com/github-release/github-release
           bash ./release.sh $(cat VERSION)
