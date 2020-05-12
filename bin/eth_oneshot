@@ -9,4 +9,4 @@ if [ $# -gt 0 ]; then
     args=("$@")
 fi
 
-exec parity "${args[@]}"
+exec openethereum "${args[@]}"

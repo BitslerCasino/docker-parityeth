@@ -1,5 +1,5 @@
 # docker-parityeth
-Docker Image for Parity for use with ETH
+Docker Image for OpenEthereum for use with ETH
 
 ### Quick Start
 Create a parityeth-data volume to persist the parityeth blockchain data, should exit immediately. The parityeth-data container will store the blockchain when the node container is recreated (software upgrade, reboot, etc):
@@ -14,26 +14,27 @@ nano /home/$USER/.ethdocker/config.toml
 
 Run the docker image
 ```
-docker run -v parityeth-data:/eth --name=parityeth-node -d \
+docker run -v parityeth-data:/eth --name=openeth-node -d \
       -p 8545:8545 \
       -p 30303:30303 \
       -p 30303:30303/udp \
       -v /home/$USER/.ethdocker/config.toml:/eth/.local/share/io.parity.ethereum/config.toml \
-      bitsler/docker-parityeth:latest
+      bitsler/docker-openeth:latest
 ```
 
 Check Logs
 ```
-docker logs -f parityeth-node
+docker logs -f openeth-node
 ```
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://git.io/fxIg3)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v2.1.2-3/install.sh)"
 ```
 
 Auto Updater
 ```
-sudo bash -c "$(curl -L https://git.io/fhCB8)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v2.1.2-3/utils.sh)"
 ```
-Then run `sudo eth-update` for latest version or `sudo eth-update 2.2.6-beta` for the beta version
+Then run `sudo openeth-update 3.0.0` for the latest version
+
