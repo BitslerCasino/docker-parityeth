@@ -76,6 +76,17 @@ case "$choice" in
 esac
 EOL
 
+cat >/usr/bin/openeth-backup <<'EOL'
+#!/usr/bin/env bash
+echo "Backing up Ethereum wallet, Please wait, this might take a few minutes"
+mkdir -p $HOME/ethbackup
+
+docker run -v parityeth-data:/dbdata --name dbstore ubuntu /bin/bash
+docker run --rm --volumes-from dbstore -v $HOME/ethbackup:/backup ubuntu tar czvf /backup/ethereum-keys.tar.gz /dbdata/.local/share/io.parity.ethereum/keys
+docker rm dbstore
+echo "Done! Backup located at $HOME/ethbackup"
+EOL
+
 chmod +x /usr/bin/openeth-update
 chmod +x /usr/bin/openeth-cli
 chmod +x /usr/bin/openeth-rm
