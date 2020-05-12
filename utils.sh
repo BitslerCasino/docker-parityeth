@@ -9,8 +9,8 @@ sudo rm -rf /usr/bin/eth-update
 sudo rm -rf /usr/bin/eth-rm
 sudo rm -rf /usr/bin/ethd-cli
 docker stop parityeth-node || true
-docker wait parityeth-node
-docker rm parityeth-node
+docker wait parityeth-node || true
+docker rm parityeth-node || true
 echo "Parity Eth successfully exited"
 
 echo "Updating to OpenEthereum"
@@ -90,6 +90,7 @@ EOL
 chmod +x /usr/bin/openeth-update
 chmod +x /usr/bin/openeth-cli
 chmod +x /usr/bin/openeth-rm
+chmod +x /usr/bin/openeth-backup
 
 echo "Successfully updated!"
 echo "CLI use the command openeth-cli"
