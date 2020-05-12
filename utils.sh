@@ -5,16 +5,6 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-sudo rm -rf /usr/bin/eth-update
-sudo rm -rf /usr/bin/eth-rm
-sudo rm -rf /usr/bin/ethd-cli
-docker stop parityeth-node || true
-docker wait parityeth-node || true
-docker rm parityeth-node || true
-echo "Parity Eth successfully exited"
-
-echo "Updating to OpenEthereum"
-
 cat >/usr/bin/openeth-update <<'EOL'
 #!/usr/bin/env bash
 set -e
@@ -24,6 +14,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 VERSION="${1:-latest}"
+shift
 
 echo "Stopping parityeth-node if it exists"
 docker stop parityeth-node || true
@@ -39,7 +30,7 @@ docker run -v parityeth-data:/eth --name=parityeth-node -d \
       -p 30303:30303 \
       -p 30303:30303/udp \
       -v $HOME/.ethdocker/config.toml:/eth/.local/share/io.parity.ethereum/config.toml \
-      bitsler/docker-openeth:$VERSION
+      bitsler/docker-openeth:$VERSION $@
 
 echo "Openeth successfully updated and started"
 echo ""
