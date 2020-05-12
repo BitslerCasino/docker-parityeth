@@ -20,7 +20,10 @@ RUN wget https://github.com/openethereum/openethereum/releases/download/v$WALLET
 
 ADD ./bin /usr/local/bin
 RUN chmod +x /usr/local/bin/eth_oneshot
-
+RUN chmod +x /usr/local/bin/openethereum
+RUN chmod +x /usr/local/bin/ethkey
+RUN chmod +x /usr/local/bin/ethstore
+RUN chmod +x /usr/local/bin/openethereum-evm
 
 VOLUME ["/eth"]
 
