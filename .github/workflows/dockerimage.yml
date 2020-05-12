@@ -22,9 +22,8 @@ jobs:
 
     - name: Push image
       run: |
-          docker push bitsler/docker-bitcoind:$(cat VERSION)
-          docker push bitsler/docker-bitcoind:latest
-          docker push bitsler/docker-bitcoindtest:$(cat VERSION)
+          docker push bitsler/docker-openeth:$(cat VERSION)
+          docker push bitsler/docker-openeth:latest
 
     - name: Push releases
       run: bash ./release.sh
