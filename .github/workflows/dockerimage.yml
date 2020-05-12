@@ -37,5 +37,8 @@ jobs:
       run: |
           go get github.com/github-release/github-release
           bash ./release.sh $(cat VERSION)
+          git add .
+          git commit -m "Update Readme"
+          git push origin master
 
 
