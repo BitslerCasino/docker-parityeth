@@ -26,6 +26,6 @@ jobs:
           docker push bitsler/docker-openeth:latest
 
     - name: Push releases
-      run: bash ./release.sh
+      run: bash ./release.sh $(cat VERSION)
 
 
