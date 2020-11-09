@@ -7,6 +7,10 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+echo "Stopping parityeth-node"
+docker stop parityeth-node || true
+docker wait parityeth-node || true
+
 echo "Updating Config..."
 mv $HOME/.ethdocker/config.toml $HOME/.ethdocker/config.toml.3.1.bak
 
