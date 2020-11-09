@@ -20,13 +20,9 @@ cat >$HOME/.ethdocker/config.toml <<EOL
 # You won't be able to encrypt and decrypt secrets.
 disable = true
 
-[dapps]
-# Disable the Dapps server (e.g. status page).
-disable = true
-
 [rpc]
 interface = "all"
-apis = ["web3", "eth", "pubsub", "net", "parity", "private", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub", "personal", "parity_accounts"]
+apis = ["web3", "eth", "net", "parity", "traces", "personal", "parity_accounts"]
 
 [ipc]
 # You won't be able to use IPC to interact with Parity.

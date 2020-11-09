@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ex
+
+# Generate config.toml
+echo "Migrating DB!"
+
+exec cargo run "/eth/.local/share/io.parity.ethereum/chains/ethereum/db/906a34e69aec8c0d/overlayrecent"
+
+echo "Migration Complete!"
