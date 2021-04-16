@@ -29,12 +29,12 @@ docker logs -f parityeth-node
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.2.1/install.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.2.3/install.sh)"
 ```
 
 Auto Updater
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.2.1/utils.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-parityeth/releases/download/v3.2.3/utils.sh)"
 ```
 Then run `sudo openeth-update 3.0.0` for the latest version
 
